@@ -16,36 +16,45 @@ user scissors, computer rock => Computer wins
 user paper, computer scissors => computer wins
           , computer paper => tie
           , computer rock => user wins
-*/ 
+*/
 
 function playRound(playerSelection, computerSelection) {
+  playerSelection = prompt("Rock, Paper, Scissors");
   playerSelection.toLowerCase();
-  if(playerSelection == "rock") {
-    if(computerSelection == "scissors") {
+  if (playerSelection == "rock") {
+    if (computerSelection == "scissors") {
       return "You WIN! Rock beats Scissors.";
-    } else if(computerSelection == "rock") {
+    } else if (computerSelection == "rock") {
       return "It's a TIE! Wanna go again?";
     } else {
       return "You LOSE! Paper beats Rock.";
     }
-  } else if(playerSelection == "scissors") {
-    if(computerSelection == "rock") {
+  } else if (playerSelection == "scissors") {
+    if (computerSelection == "rock") {
       return "You LOSE! Rock beats Scissors.";
-    } else if(computerSelection == "scissors") {
-      return "It's a TIE! Wanna go again?"
+    } else if (computerSelection == "scissors") {
+      return "It's a TIE! Wanna go again?";
     } else {
-      return "Yu WIN! Scissors beats Paper."
+      return "Yu WIN! Scissors beats Paper.";
     }
   } else if (playerSelection == "paper") {
-    if(computerSelection == "scissors") {
+    if (computerSelection == "scissors") {
       return "You LOSE! Scissors beats Paper.";
-    } else if(computerSelection == "paper") {
-      return "It's a TIE! Wanna go again?"
+    } else if (computerSelection == "paper") {
+      return "It's a TIE! Wanna go again?";
     } else {
       return "You WIN! Paper beats Rock.";
     }
   } else {
-    return "Enter a valid option!"
+    return "Enter a valid option!";
   }
 }
 
+function game() {
+  let rounds = 5;
+  for (let i = 1; i <= 5; i++) {
+    alert(playRound());
+  }
+}
+
+game();
